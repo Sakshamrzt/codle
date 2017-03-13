@@ -44,9 +44,8 @@ def home():
 	return redirect(url_for('welcome'))
 
 @app.route('/welcome')
+@logout_required
 def welcome():
-	if 'logged_in' in session:
-		return redirect(url_for('home'))
 	return render_template('welcome.html')
 
 @app.route('/login',methods = ['GET','POST'])
