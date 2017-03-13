@@ -38,14 +38,18 @@ def logout_required(f):
 
 @app.route('/')
 def home():
-	if 'logged_in' in session:	
-		#posts=db.session.query(BlogPosts).all()
- 		return render_template('index.html')
+	if 'logged_in' in session:
+		name=session['name']	
+		posts=[]
+		# posts=db.session.query(BlogPosts).all()
+ 		return render_template('index.html',posts=posts, name=name)
 	return redirect(url_for('welcome'))
 
 @app.route('/welcome')
 @logout_required
 def welcome():
+	if 'logged_in' in session:
+		return redirect(url_for('home'))
 	return render_template('welcome.html')
 
 @app.route('/login',methods = ['GET','POST'])
@@ -53,8 +57,9 @@ def welcome():
 def login():
 	error=None
 	if request.method=='POST':
-		if request.form['username'] == 'admin' and request.form['password'] == 'admin':
+		if (request.form['username'] == 'admin' or request.form['username'] == 'himank') and request.form['password'] == 'admin':
 			session['logged_in'] = True
+			session['name'] = request.form['username']
 			flash('Logged in successfully')
 			return redirect(url_for('home'))
 		else:
@@ -65,6 +70,7 @@ def login():
 @login_required
 def logout():
 	session.pop('logged_in',None)
+	session.pop('name',None)
 	flash("logged out successfuly")
 	return redirect(url_for('welcome'))
 
