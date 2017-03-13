@@ -15,7 +15,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 
 #Setting up the database
 db = SQLAlchemy(app)
-from models import *
+#from models import *
 def login_required(f):
 	@wraps(f)
 	def wrap(*args, **kwargs):
@@ -40,7 +40,7 @@ def logout_required(f):
 @app.route('/<name>')
 def home(name=None):
 	if 'logged_in' in session:	
-		posts=db.session.query(BlogPosts).all()
+		posts=None#db.session.query(BlogPosts).all()
  		return render_template('index.html',posts=posts,name=name)
 	return redirect(url_for('welcome'))
 
