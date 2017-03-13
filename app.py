@@ -37,11 +37,10 @@ def logout_required(f):
 	return wrap
 
 @app.route('/')
-@app.route('/<name>')
-def home(name=None):
+def home():
 	if 'logged_in' in session:	
 		#posts=db.session.query(BlogPosts).all()
- 		return render_template('index.html',name=name)
+ 		return render_template('index.html')
 	return redirect(url_for('welcome'))
 
 @app.route('/welcome')
@@ -58,7 +57,7 @@ def login():
 		if request.form['username'] == 'admin' and request.form['password'] == 'admin':
 			session['logged_in'] = True
 			flash('Logged in successfully')
-			return redirect(url_for('home',name=request.form['username']))
+			return redirect(url_for('home'))
 		else:
 			error='Please Check, Username or Password'
 	return render_template('login.html',error=error)
