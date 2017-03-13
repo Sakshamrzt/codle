@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		{% block content %}{% endblock %}
+
+		{% if error %}
+			<div class="alert alert-warning">
+			  	<strong>Warning!</strong> {{ error }}
+			</div>
+		{% endif %}
+		{% for m in get_flashed_messages() %}
+			{% if 'success' in m %}
+				<div class="alert alert-success">
+				  	<strong>Success!</strong> {{ m }}
+				</div>
+			{% elif 'logout' in m %}
+				<div class="alert alert-warning">
+				  	<strong>Warning!</strong> {{ m }}
+				</div>
+			{% else %}
+				<div class="alert alert-info">
+				  	<strong>Info!</strong> {{ m }}
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+
+</body>
+</html>

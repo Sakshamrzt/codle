@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+	<div class="pull-right col-md-2">
+		{% if name %}
+			<h6>Welcome, {{ name }} </h6>
+		{% endif %}
+		<a href="/logout"><button type="button" class="btn btn-danger btn-md btn-block">Logout</button></a>
+	</div>
+</div>
+<div class="jumbotron">
+	<h1><center>Welcome to the world of Flask</center></h1>
+	<h3><center>Trying flask for the first time on my own.</center></h3>
+</div>
+
+<div class="panel-group">
+{% for p in posts %}
+	<div class="row">
+		<div class="col-lg-4 col-lg-offset-4">
+			<div class="panel panel-primary">
+				<div class="panel-heading">{{ p.title }}</div>
+				<div class="panel-body">{{ p.desc }}</div>
+			</div>
+		</div>		
+	</div>
+	<br><br>
+{% endfor%}
+</div>
+{% endblock %}
