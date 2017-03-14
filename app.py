@@ -9,6 +9,7 @@ app=Flask(__name__)
 
 #config
 app.config.from_object(os.environ['APP_SETTINGS'])
+print os.environ['APP_SETTINGS']
 #bcrypt = Bcrypt(app)
 #Setting up the database
 db = SQLAlchemy(app)
