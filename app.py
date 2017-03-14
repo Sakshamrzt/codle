@@ -1,18 +1,17 @@
 from flask import Flask,render_template,redirect,url_for,session, request, flash
 from functools import wraps
-from flask_sqlalchemy import SQLAlchemy
+import os
+# from flask_sqlalchemy import SQLAlchemy
 
 
 app=Flask(__name__)
 
 #config
-
-import os
-app.config.from_object(os.environ['APP_SETTINGS'])
+app.config.from_object('config.BaseConfig')
 
 #Setting up the database
-db = SQLAlchemy(app)
-from models import *
+# db = SQLAlchemy(app)
+# from models import *
 def login_required(f):
 	@wraps(f)
 	def wrap(*args, **kwargs):
@@ -37,8 +36,8 @@ def logout_required(f):
 def home():
 	if 'logged_in' in session:
 		name=session['name']	
-		posts=db.session.query(BlogPosts).all()
- 		return render_template('index.html',posts=posts, name=name)
+		# posts=db.session.query(BlogPosts).all()
+ 		return render_template('index.html',name=name)
 	return redirect(url_for('welcome'))
 
 @app.route('/welcome')
