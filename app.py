@@ -1,17 +1,18 @@
 from flask import Flask,render_template,redirect,url_for,session, request, flash
 from functools import wraps
 import os
-# from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import bcrypt
 
 
 app=Flask(__name__)
 
 #config
-app.config.from_object('config.BaseConfig')
-
+app.config.from_object(os.environ['APP_SETTINGS'])
+#bcrypt = Bcrypt(app)
 #Setting up the database
-# db = SQLAlchemy(app)
-# from models import *
+db = SQLAlchemy(app)
+from models import *
 def login_required(f):
 	@wraps(f)
 	def wrap(*args, **kwargs):
@@ -30,14 +31,14 @@ def logout_required(f):
 		else:
 			flash('You need to logout first.')
 			return redirect(url_for('home'))
-	return wrap
+	return wraps
 
 @app.route('/')
 def home():
 	if 'logged_in' in session:
 		name=session['name']	
-		# posts=db.session.query(BlogPosts).all()
- 		return render_template('index.html',name=name)
+		posts=db.session.query(BlogPosts).all()
+ 		return render_template('index.html',posts=posts,name=name)
 	return redirect(url_for('welcome'))
 
 @app.route('/welcome')
