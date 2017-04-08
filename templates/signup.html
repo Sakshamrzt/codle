@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+	<center><h1>Sign Up</h1></center>
+</div>
+<br>
+<div class="responsive-form block-center">
+	<form class="form-signin" role="form" method="post" action="{{ url_for('signup') }}">
+	{{ form.csrf_token }}
+	<center>
+    {{ form.username(placeholder="username") }}
+	</p>
+	<br>
+	<p>
+	 	{{ form.email(placeholder="email") }}
+	</p>
+	<br>
+	<p>
+		{{ form.password(placeholder="password")}}
+	</p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</center>
+	<div class="row">
+		<div class="col-lg-2"> </div>
+		<div class="col-lg-2"> </div>
+		<div class="col-lg-1"> </div>
+		<div class="col-lg-2">
+			<center><input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign Up"></center>
+		</div>
+	</div>
+	</form>
+</div>
+
+{% endblock %}

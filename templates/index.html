@@ -15,15 +15,18 @@
 
 <div class="panel-group">
 {% for p in posts %}
-	<div class="row">
-		<div class="col-lg-4 col-lg-offset-4">
-			<div class="panel panel-primary">
-				<div class="panel-heading">{{ p.title }}</div>
-				<div class="panel-body">{{ p.desc }}</div>
-			</div>
-		</div>		
-	</div>
-	<br><br>
-{% endfor%}
+	{% if p.author_id == sid %}
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<div class="panel panel-primary">
+					<div class="panel-heading">{{ p.title }}</div>
+					<div class="panel-body">{{ p.desc }}</div>
+					<div class="panel-body">{{ p.author.name }}</div>
+				</div>
+			</div>		
+		</div>
+		<br><br>
+	{% endif %}
+{% endfor %}
 </div>
 {% endblock %}

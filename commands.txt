@@ -2,3 +2,5 @@ heroku config:set APP_SETTINGS=config.ProductionConfig --remote heroku
 
 #To insert postgresql
 heroku addons:add heroku-postgresql:dev
+
+export DATABASE_URL="postgresql:///discover_flask_dev"
