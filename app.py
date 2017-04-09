@@ -11,8 +11,8 @@ app=Flask(__name__)
 bcrypt = Bcrypt(app)
 # login_manager = LoginManager()
 # login_manager.init_app(app)
-#config
-app.config.from_object(os.environ['APP_SETTINGS'])
+#configho
+app.config.from_object('config.DevelopmentConfig')
 #Setting up the database
 db = SQLAlchemy(app)
 from models import *
