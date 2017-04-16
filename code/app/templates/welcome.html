@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
+    <title>Homepage | Codle</title>
+
+    <!-- Favicons-->
+    <link rel="icon" href="../static/images/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="../static/images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="../static/images/favicon/mstile-144x144.png">
+    <!-- For Windows Phone -->
+
+  <link href="{{ url_for('static', filename="css/materialize.css")}}" type="text/css" rel="stylesheet" media="screen,projection">
+
+   <link href=  "{{ url_for('static', filename="css/style.css")}}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href=  "{{ url_for('static', filename="css/page-center.css")}}" type="text/css" rel="stylesheet" media="screen,projection">
+
+ 
+  <link href=  "{{ url_for('static', filename="css/prism.css")}}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href=  "{{ url_for('static', filename="js/plugins/perfect-scrollbar/perfect-scrollbar.css")}}" type="text/css" rel="stylesheet" media="screen,projection">
+  
+</head>
+
+<body>
+    <!-- Start Page Loading -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>        
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- End Page Loading -->
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- START HEADER -->
+    <header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="cyan">
+                <div class="nav-wrapper">
+                    <h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="../static/images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1>
+                    <ul class="right hide-on-med-and-down">
+                        <li class="search-out">
+                            <input type="text" class="search-out-text">
+                        </li>
+                        <li>    
+                            <a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a>                              
+                        </li>
+                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
+                        </li>
+                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light"><i class="mdi-social-notifications"></i></a>
+                        </li>
+                        <!-- Dropdown Trigger -->                        
+                        <li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+  </header>
+    <!-- END HEADER -->
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- START MAIN -->
+    <div id="main" style="padding-left: 0;">
+        <!-- START WRAPPER -->
+        <div class="wrapper">
+
+            <!-- START CONTENT -->
+            <section id="content"> 
+                <!--start container-->
+                <div class="container">
+                
+	                    <div id="media-slider">
+				            <div class="row">
+				              <div class="col s12 m12 l12">
+				                <p>Note: This is also Hammer.js compatible! Try swiping with your finger to scroll through the slider.</p>
+				                <div class="slider">
+				                  <ul class="slides">
+				                    <li>
+				                      <img src="http://lorempixel.com/580/250/nature/1" alt="img-1">
+				                      <!-- random image -->
+				                      <div class="caption center-align">
+				                        <h3>This is our big Tagline!</h3>
+				                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+				                        <a href="{{url_for('login')}}" id="container-toggle-button" class="btn waves-effect waves-light">Click to login</a>
+	            						<a href="{{url_for('reg')}}" id="container-toggle-button" class="btn waves-effect waves-light">Click to signup</a>
+				                      </div>
+				                    </li>
+				                    <li>
+				                      <img src="http://lorempixel.com/580/250/nature/2" alt="img-2">
+				                      <!-- random image -->
+				                      <div class="caption left-align">
+				                        <h3>Left Aligned Caption</h3>
+				                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+				                        <a href="{{url_for('login')}}" id="container-toggle-button" class="btn waves-effect waves-light">Click to login</a>
+	            						<a href="{{url_for('reg')}}" id="container-toggle-button" class="btn waves-effect waves-light">Click to signup</a>
+				                      </div>
+				                    </li>
+				                    <li>
+				                      <img src="http://lorempixel.com/580/250/nature/3" alt="img-3">
+				                      <!-- random image -->
+				                      <div class="caption right-align">
+				                        <h3>Right Aligned Caption</h3>
+				                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+				                        <a href="{{url_for('login')}}" id="container-toggle-button" class="btn waves-effect waves-light">Click to login</a>
+	            						<a href="{{url_for('reg')}}" id="container-toggle-button" class="btn waves-effect waves-light">Click to signup</a>
+				                      </div>
+				                    </li>
+				                    <li>
+				                      <img src="http://lorempixel.com/580/250/nature/4" alt="img-4">
+				                      <!-- random image -->
+				                      <div class="caption center-align">
+				                        <h3>This is our big Tagline!</h3>
+				                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+				                        <a href="{{url_for('login')}}" id="container-toggle-button" class="btn waves-effect waves-light">Click to login</a>
+	            						<a href="{{url_for('reg')}}" id="container-toggle-button" class="btn waves-effect waves-light">Click to signup</a>
+				                      </div>
+				                    </li>
+				                  </ul>
+				                </div>
+
+				              </div>
+				            </div>
+			          	</div>
+
+	                    <div class="divider"></div>      
+
+                        <!--Example Promotion Table-->
+                        <div id="promotion-table" class="section">
+                            <h4 class="header">Example Promotion Table</h4>
+                            <div class="row">
+                                <div class="col s12 m12 l12">
+                                    <div class="card-panel">
+                                        <div class="row">
+                                            <div class="col s4">
+                                                <div class="center promo promo-example">
+                                                    <i class="mdi-image-flash-on"></i>
+                                                    <p class="flow-text">Speeds up development</p>
+                                                    <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col s4">
+                                                <div class="center promo promo-example">
+                                                    <i class="mdi-social-group"></i>
+                                                    <p class="flow-text">User Experience Focused</p>
+                                                    <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col s4">
+                                                <div class="center promo promo-example">
+                                                    <i class="mdi-action-settings"></i>
+                                                    <p class="flow-text">Easy to work with</p>
+                                                    <p class="light center">We have provided detailed  as well as specific code examples to help new users get started.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+                        <!--Responsive Side Navigation Layout-->
+                        <div id="responsive-side-navigation-layout" class="section">
+                            <h4 class="header">Responsive Side Navigation Layout</h4>
+                            <div class="row">
+                                <div class="col s12 m4 l3">
+                                    <p>In this example below, we take the same layout from above, but we make it responsive by defining how many columns the div should take up on each screen size. Try resizing your browser and watch the layout change below.</p>
+                                </div>
+                                <div class="col s12 m8 l9">
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <div class="browser-window">
+                                                <div class="top-bar">
+                                                    <div class="circles">
+                                                        <div id="close-circle" class="circle"></div>
+                                                        <div id="minimize-circle" class="circle"></div>
+                                                        <div id="maximize-circle" class="circle"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="content">
+                                                    <div class="row">
+
+                                                        <div id="site-layout-example-top" class="col s12">
+                                                            <!-- <p class="flat-text-logo"></p> -->
+                                                        </div>
+                                                        <div id="site-layout-example-left" class="col s12 m4 l3">
+                                                            <p class="flat-text-header"></p>
+                                                            <p class="flat-text"></p>
+                                                            <p class="flat-text"></p>
+                                                        </div>
+                                                        <div id="site-layout-example-right" class="col s12 m8 l9">
+                                                            <p class="flat-text"></p>
+                                                            <p class="flat-text"></p>
+                                                            <p class="flat-text"></p>
+                                                            <p class="flat-text"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end container-->
+            </section>
+            <!-- END CONTENT -->
+            
+        </div>
+        <!-- END WRAPPER -->
+
+    </div>
+    <!-- END MAIN -->
+
+    <!-- START FOOTER -->
+    <footer class="page-footer" style="padding-left: 0;">
+        <div class="footer-copyright">
+            <div class="container">
+            <span>Copyright © 2015 <a class="grey-text text-lighten-4" href="http://themeforest.net/user/geekslabs/portfolio?ref=geekslabs" target="_blank">GeeksLabs</a> All rights reserved.</span>
+            <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">GeeksLabs</a></span>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+
+
+    <!-- ================================================
+    Scripts
+    ================================================ -->
+    
+    <!-- jQuery Library -->
+<script type="text/javascript" src="{{ url_for('static', filename="js/jquery-1.11.2.min.js")}}"></script>
+  <!--materialize js-->
+  <script type="text/javascript" src="{{ url_for('static', filename="js/materialize.js")}}"></script>
+  <!--prism-->
+  <script type="text/javascript" src="{{ url_for('static', filename="js/prism.js")}}"></script>
+  <!--scrollbar-->
+  <script type="text/javascript" src="{{ url_for('static', filename="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js")}}"></script>
+
+  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+  <script type="text/javascript" src="{{ url_for('static', filename="js/plugins.js")}}"></script>
+    
+</body>
+
+</html>
