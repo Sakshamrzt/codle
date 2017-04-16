@@ -49,7 +49,7 @@
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form method="post" action="{{url_for('reg')}}" >
+      <form class="login-form" method="post" action="{{url_for('reg')}}" >
         <div class="row">
           <div class="input-field col s12 center">
             <h4>Register</h4>
@@ -85,11 +85,11 @@
           </div>
         </div>
         {%for message in get_flashed_messages()%}
-{{message}}
-{%endfor%}
+        {{message}}
+        {%endfor%}
         <div class="row">
           <div class="input-field col s12">
-            <input type="submit" value="Register now"> 
+            <input type="submit" value="Register now"  class="btn waves-effect waves-light col s12"> 
           </div>
           <div class="input-field col s12">
             <p class="margin center medium-small sign-up">Already have an account? <a href="{{url_for('login')}}">Login</a></p> 
