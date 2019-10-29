@@ -1,3 +1,1 @@
-Welcome Page
-Login Page
-Register Page
+Old Codle
